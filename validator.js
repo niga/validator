@@ -315,8 +315,8 @@ var validator = (function($){
         var linkedTo,
             form = field.closest('form'); // if the field is part of a form, then cache it
 
-
-        field.data( 'val', field[0].value.replace(/^\s+|\s+$/g, "") );  // cache the value of the field and trim it
+	var dataTemp = field[0].value && field[0].value.replace ? field[0].value.replace(/^\s+|\s+$/g, "") : field[0].value;
+        field.data( 'val', dataTemp );  // cache the value of the field and trim it
         data = field.data();
 
         // Special treatment
